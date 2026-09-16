@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ChatWindow from './components/ChatWindow';
 import InputBar from './components/InputBar';
-import { Message } from './types';
+import type { Message } from './types';
 import { sendMessage } from './api/chat';
 import './App.css';
 

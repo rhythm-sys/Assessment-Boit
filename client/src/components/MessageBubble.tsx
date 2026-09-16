@@ -1,4 +1,4 @@
-import { Message } from '../types';
+import type { Message } from '../types';
 import DataTable from './DataTable';
 import ChartView from './ChartView';
 import KpiCard from './KpiCard';

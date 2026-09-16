@@ -2,7 +2,7 @@ import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import { ChartConfig } from '../types';
+import type { ChartConfig } from '../types';
 
 interface ChartViewProps {
   data: Record<string, unknown>[];

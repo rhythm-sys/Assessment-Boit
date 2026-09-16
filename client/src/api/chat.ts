@@ -1,4 +1,4 @@
-import { ChatResponse } from '../types';
+import type { ChatResponse } from '../types';
 
 export async function sendMessage(message: string): Promise<ChatResponse> {
   const res = await fetch('/api/chat', {
