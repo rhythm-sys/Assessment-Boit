@@ -1,0 +1,10 @@
+{
+  "name": "conversational-data-analyst",
+  "private": true,
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "db:seed": "cd server && npm run db:seed",
+    "test": "cd server && npm test"
+  }
+}
