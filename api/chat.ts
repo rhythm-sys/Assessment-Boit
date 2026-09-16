@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import initSqlJs, { type Database } from 'sql.js';
+import path from 'path';
 
 // ─── Types ───────────────────────────────────────────────────────────
 interface ChartConfig {
@@ -85,7 +86,9 @@ let dbInstance: Database | null = null;
 async function getDb(): Promise<Database> {
   if (dbInstance) return dbInstance;
 
-  const SQL = await initSqlJs();
+  const SQL = await initSqlJs({
+    locateFile: (file: string) => path.join(process.cwd(), 'node_modules', 'sql.js', 'dist', file),
+  });
   const db = new SQL.Database();
 
   // Schema
