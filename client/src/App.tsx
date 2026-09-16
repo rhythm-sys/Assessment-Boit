@@ -55,7 +55,7 @@ function App() {
       <header className="app-header">
         <h1>Conversational Data Analyst</h1>
       </header>
-      <ChatWindow messages={messages} />
+      <ChatWindow messages={messages} onSuggestionClick={handleSend} />
       <InputBar onSend={handleSend} disabled={isLoading} />
     </div>
   );

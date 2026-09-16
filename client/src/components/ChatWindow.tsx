@@ -2,11 +2,21 @@ import { useEffect, useRef } from 'react';
 import type { Message } from '../types';
 import MessageBubble from './MessageBubble';
 
+const SUGGESTIONS = [
+  'Show monthly onboarding applications by customer segment',
+  'Which branches have the highest rejection rate?',
+  'Compare retail and SME onboarding volumes',
+  'Show the top five customers by transaction value',
+  'How many customers do we have?',
+  'Show recent transactions',
+];
+
 interface ChatWindowProps {
   messages: Message[];
+  onSuggestionClick: (text: string) => void;
 }
 
-export default function ChatWindow({ messages }: ChatWindowProps) {
+export default function ChatWindow({ messages, onSuggestionClick }: ChatWindowProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,12 +30,9 @@ export default function ChatWindow({ messages }: ChatWindowProps) {
           <h2>Conversational Data Analyst</h2>
           <p>Ask questions about your banking data. Try:</p>
           <ul>
-            <li>"Show monthly onboarding applications by customer segment"</li>
-            <li>"Which branches have the highest rejection rate?"</li>
-            <li>"Compare retail and SME onboarding volumes"</li>
-            <li>"Show the top five customers by transaction value"</li>
-            <li>"How many customers do we have?"</li>
-            <li>"Show recent transactions"</li>
+            {SUGGESTIONS.map((s) => (
+              <li key={s} onClick={() => onSuggestionClick(s)}>{s}</li>
+            ))}
           </ul>
         </div>
       )}

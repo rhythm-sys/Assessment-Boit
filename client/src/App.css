@@ -73,12 +73,15 @@ body {
   padding: 10px 16px;
   border-radius: 8px;
   font-size: 0.9rem;
-  cursor: default;
-  transition: background 0.2s;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
 }
 
 .welcome li:hover {
   background: #e2e8f0;
+  border-color: #6366f1;
+  color: #4f46e5;
 }
 
 /* Messages */
