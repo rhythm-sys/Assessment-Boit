@@ -6,5 +6,9 @@
     "dev:client": "cd client && npm run dev",
     "db:seed": "cd server && npm run db:seed",
     "test": "cd server && npm test"
+  },
+  "dependencies": {
+    "@vercel/node": "^13.0.1",
+    "sql.js": "^1.14.2"
   }
 }
